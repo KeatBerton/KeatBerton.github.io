@@ -1,9 +1,30 @@
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #333;
+  --section-bg: #fff;
+  --link-color: #0077cc;
+  --footer-color: #777;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --section-bg: #1e1e1e;
+  --link-color: #4ea8ff;
+  --footer-color: #999;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   padding: 20px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+header, section, footer {
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 header {
@@ -14,7 +35,7 @@ header {
 nav a {
   margin: 0 10px;
   text-decoration: none;
-  color: #0077cc;
+  color: var(--link-color);
   font-weight: bold;
 }
 
@@ -22,18 +43,41 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  background: none;
+  border: 1px solid var(--link-color);
+  color: var(--link-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--link-color);
+  color: #fff;
+}
+
+.theme-toggle:active {
+  transform: scale(0.95); /* лёгкое "сжатие" при клике */
+}
+
 section {
   max-width: 700px;
   margin: 20px auto;
-  background: white;
+  background: var(--section-bg);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 footer {
   text-align: center;
   margin-top: 40px;
-  color: #777;
+  color: var(--footer-color);
   font-size: 14px;
 }
