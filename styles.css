@@ -73,6 +73,34 @@ section {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  
+  /* Анимация появления */
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: fadeSlideZoomIn 0.8s ease-out forwards;
+}
+
+/* Поочерёдная задержка появления */
+section:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+section:nth-of-type(2) {
+  animation-delay: 0.5s;
+}
+section:nth-of-type(3) {
+  animation-delay: 0.8s;
+}
+
+
+@keyframes fadeSlideZoomIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 footer {
