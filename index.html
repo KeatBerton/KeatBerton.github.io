@@ -8,6 +8,8 @@
 </head>
 <body>
 
+  <button class="theme-toggle" onclick="toggleTheme()">🌙 Темная тема</button>
+
   <header>
     <h1>👨‍💻 Keat — портфолио разработчика</h1>
     <nav>
@@ -19,13 +21,13 @@
 
   <section id="about">
     <h2>Обо мне</h2>
-    <p>Привет! Меня зовут Keat. Я создаю Telegram-ботов, проекты и сайты. Учусь, работаю и люблю делать крутые проекты, в которые вкладываю душу.</p>
+    <p>Привет! Меня зовут Keat. Я создаю Telegram-ботов, сервисы и сайты. Учусь, работаю и люблю делать крутые проекты, в которые вкладываю душу.</p>
   </section>
 
   <section id="projects">
     <h2>Проекты</h2>
     <ul>
-      <li>🤖 Telegram-боты на Python </li>
+      <li>🤖 Telegram-боты на Python</li>
       <li>🌐 Веб-проекты и мини-сайты</li>
     </ul>
   </section>
@@ -34,20 +36,27 @@
     <h2>Контакты</h2>
     <p>Связаться со мной можно через:</p>
     <ul>
-      <li>📧 Email: <a href="mailto:keat111123333@yandex.ru">keat111123333@yandex.ru</a></li>
+      <li>📧 Email: <a href="keat111123333@yandex.ru">keat111123333@yandex.ru</a></li>
       <li>💬 Telegram: <a href="https://t.me/KeatBerton" target="_blank">@KeatBerton</a></li>
       <li>🔗 GitHub: <a href="https://github.com/KeatBerton" target="_blank">github.com/KeatBerton</a></li>
     </ul>
   </section>
 
   <footer>
-    © 2025 Keat Berton. Все права защищены.
+    © 2025 Keat. Все права защищены.
   </footer>
 
-</body>
-</html>
-  © 2025 Keat Berton
-</footer>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const btn = document.querySelector('.theme-toggle');
+      if (document.body.classList.contains('dark')) {
+        btn.textContent = '☀️ Светлая тема';
+      } else {
+        btn.textContent = '🌙 Темная тема';
+      }
+    }
+  </script>
 
 </body>
 </html>
